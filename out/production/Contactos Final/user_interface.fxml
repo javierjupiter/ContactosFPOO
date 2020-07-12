@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="400.0" maxWidth="708.0" minHeight="400.0" minWidth="600.0" prefHeight="400.0" prefWidth="708.0" style="-fx-background-color: #121211;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
+    <children>
+        <AnchorPane prefHeight="117.0" prefWidth="708.0" style="-fx-background-color: #424242;" />
+        <VBox maxHeight="400.0" maxWidth="708.0" minHeight="400.0" minWidth="600.0" prefHeight="400.0" prefWidth="708.0">
+            <children>
+                <HBox prefHeight="60.0" prefWidth="506.0">
+                    <children>
+                        <Label prefHeight="60.0" prefWidth="212.0" text="Buscador de contactos" textFill="WHITE">
+                            <font>
+                                <Font name="Roboto" size="20.0" />
+                            </font>
+                            <HBox.margin>
+                                <Insets left="20.0" right="20.0" />
+                            </HBox.margin>
+                            <padding>
+                                <Insets bottom="18.0" top="18.0" />
+                            </padding>
+                        </Label>
+                        <HBox nodeOrientation="LEFT_TO_RIGHT" prefHeight="60.0" prefWidth="319.0" HBox.hgrow="NEVER">
+                            <children>
+                                <JFXTextField fx:id="txtRuta" focusColor="#d32f2f" labelFloat="true" prefHeight="29.0" prefWidth="234.0" promptText="Ruta archivo de excel" style="-fx-text-inner-color: #fff; -fx-prompt-text-fill: #E4E5E4;" unFocusColor="WHITE">
+                                    <HBox.margin>
+                                        <Insets top="18.0" />
+                                    </HBox.margin>
+                                    <font>
+                                        <Font name="Roboto" size="15.0" />
+                                    </font>
+                                </JFXTextField>
+                                <JFXButton onMouseClicked="#onApplyButtonClicked" ripplerFill="#9a0007" style="-fx-background-color: #d32f2f;" text="Aplicar" textFill="WHITE">
+                                    <HBox.margin>
+                                        <Insets left="5.0" right="5.0" top="18.0" />
+                                    </HBox.margin>
+                                </JFXButton>
+                            </children>
+                            <HBox.margin>
+                                <Insets left="140.0" />
+                            </HBox.margin>
+                        </HBox>
+                    </children>
+                    <VBox.margin>
+                        <Insets />
+                    </VBox.margin>
+                </HBox>
+                <HBox prefHeight="361.0" prefWidth="708.0">
+                    <children>
+                        <AnchorPane fx:id="paneBusqueda" disable="true" prefHeight="300.0" prefWidth="223.0" style="-fx-background-color: #1E1E1E; -fx-background-radius: 7;">
+                            <opaqueInsets>
+                                <Insets />
+                            </opaqueInsets>
+                            <HBox.margin>
+                                <Insets bottom="30.0" left="30.0" top="10.0" />
+                            </HBox.margin>
+                            <children>
+                                <VBox prefHeight="300.0" prefWidth="223.0">
+                                    <children>
+                                        <Label text="Buscar" textFill="WHITE">
+                                            <font>
+                                                <Font name="Roboto" size="18.0" />
+                                            </font>
+                                            <VBox.margin>
+                                                <Insets bottom="30.0" left="83.5" right="83.0" top="10.0" />
+                                            </VBox.margin>
+                                        </Label>
+                                        <JFXTextField fx:id="txtBusqueda" focusColor="#d32f2f" labelFloat="true" prefHeight="29.0" prefWidth="234.0" promptText="Busqueda" style="-fx-text-inner-color: #fff; -fx-prompt-text-fill: #E4E5E4;" unFocusColor="WHITE">
+                                            <font>
+                                                <Font name="Roboto" size="15.0" />
+                                            </font>
+                                            <VBox.margin>
+                                                <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                                            </VBox.margin>
+                                        </JFXTextField>
+                                        <JFXRadioButton fx:id="radNombre" onAction="#onSelectedRadioNombre" style="-jfx-unselected-color: #fff; -jfx-selected-color: #d32f2f;" text="Nombre" textFill="WHITE">
+                                            <font>
+                                                <Font name="Roboto" size="15.0" />
+                                            </font>
+                                            <VBox.margin>
+                                                <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                                            </VBox.margin>
+                                        </JFXRadioButton>
+                                        <JFXRadioButton fx:id="radTelefono" onAction="#onSelectedRadioTelefono" style="-jfx-unselected-color: #fff; -jfx-selected-color: #d32f2f;" text="Teléfono" textFill="WHITE">
+                                            <font>
+                                                <Font name="Roboto" size="15.0" />
+                                            </font>
+                                            <VBox.margin>
+                                                <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                                            </VBox.margin>
+                                        </JFXRadioButton>
+                                        <JFXRadioButton fx:id="radCorreo" onAction="#onSelectedRadioCorreo" style="-jfx-unselected-color: #fff; -jfx-selected-color: #d32f2f;" text="Correo" textFill="WHITE">
+                                            <font>
+                                                <Font name="Roboto" size="15.0" />
+                                            </font>
+                                            <VBox.margin>
+                                                <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                                            </VBox.margin>
+                                        </JFXRadioButton>
+                                        <JFXButton fx:id="btnBuscar" onMouseClicked="#onSelectedSearchButtonClicked" prefWidth="183.0" ripplerFill="#9a0007" style="-fx-background-color: #d32f2f;" text="Buscar" textFill="WHITE">
+                                            <VBox.margin>
+                                                <Insets bottom="10.0" left="20.0" right="20.0" top="20.0" />
+                                            </VBox.margin>
+                                        </JFXButton>
+                                    </children>
+                                </VBox>
+                            </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="300.0" prefWidth="395.0" style="-fx-background-color: #1E1E1E; -fx-background-radius: 7;">
+                            <opaqueInsets>
+                                <Insets />
+                            </opaqueInsets>
+                            <HBox.margin>
+                                <Insets bottom="30.0" left="30.0" right="30.0" top="10.0" />
+                            </HBox.margin>
+                            <children>
+                                <AnchorPane fx:id="paneArchivoExcel" prefHeight="300.0" prefWidth="395.0">
+                                    <children>
+                                        <VBox prefHeight="300.0" prefWidth="405.0">
+                                            <children>
+                                                <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@images/file.png" />
+                                                    </image>
+                                                    <VBox.margin>
+                                                        <Insets left="147.0" right="147.0" />
+                                                    </VBox.margin>
+                                                </ImageView>
+                                                <Label text="Archivo de excel no seleccionado" textFill="#424242">
+                                                    <font>
+                                                        <Font name="Roboto" size="20.0" />
+                                                    </font>
+                                                    <VBox.margin>
+                                                        <Insets left="55.0" />
+                                                    </VBox.margin>
+                                                </Label>
+                                            </children>
+                                            <padding>
+                                                <Insets bottom="88.0" top="88.0" />
+                                            </padding>
+                                        </VBox>
+                                    </children>
+                                </AnchorPane>
+                                <AnchorPane fx:id="paneBusquedaLista" prefHeight="300.0" prefWidth="395.0" visible="false">
+                                    <children>
+                                        <VBox prefHeight="300.0" prefWidth="405.0">
+                                            <children>
+                                                <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@images/buscar.png" />
+                                                    </image>
+                                                    <VBox.margin>
+                                                        <Insets left="147.0" right="147.0" />
+                                                    </VBox.margin>
+                                                </ImageView>
+                                                <Label text="Busquemos algo" textFill="#424242">
+                                                    <font>
+                                                        <Font name="Roboto" size="20.0" />
+                                                    </font>
+                                                    <VBox.margin>
+                                                        <Insets left="120.0" />
+                                                    </VBox.margin>
+                                                </Label>
+                                            </children>
+                                            <padding>
+                                                <Insets bottom="88.0" top="88.0" />
+                                            </padding>
+                                        </VBox>
+                                    </children>
+                                </AnchorPane>
+                                <AnchorPane fx:id="paneContactoNoEncontrado" prefHeight="300.0" prefWidth="395.0" visible="false">
+                                    <children>
+                                        <AnchorPane prefHeight="300.0" prefWidth="395.0">
+                                            <children>
+                                                <VBox prefHeight="300.0" prefWidth="395.0">
+                                                    <children>
+                                                        <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                                                            <image>
+                                                                <Image url="@images/not_found.png" />
+                                                            </image>
+                                                            <VBox.margin>
+                                                                <Insets left="147.0" right="147.0" />
+                                                            </VBox.margin>
+                                                        </ImageView>
+                                                        <Label text="Contacto no encontrado" textFill="#424242">
+                                                            <font>
+                                                                <Font name="Roboto" size="20.0" />
+                                                            </font>
+                                                            <VBox.margin>
+                                                                <Insets left="89.0" right="89.0" />
+                                                            </VBox.margin>
+                                                        </Label>
+                                                    </children>
+                                                    <padding>
+                                                        <Insets bottom="88.0" top="88.0" />
+                                                    </padding>
+                                                </VBox>
+                                            </children>
+                                        </AnchorPane>
+                                    </children>
+                                </AnchorPane>
+                                <AnchorPane fx:id="paneContacto" prefHeight="300.0" prefWidth="395.0" visible="false">
+                                    <children>
+                                        <VBox prefHeight="310.0" prefWidth="405.0">
+                                            <children>
+                                                <HBox prefHeight="68.0" prefWidth="405.0">
+                                                    <children>
+                                                        <Label fx:id="lblnombreCompleto" text="nombre_completo" textFill="WHITE">
+                                                            <font>
+                                                                <Font name="Roboto Black" size="30.0" />
+                                                            </font>
+                                                            <HBox.margin>
+                                                                <Insets left="35.0" top="15.0" />
+                                                            </HBox.margin>
+                                                        </Label>
+                                                    </children>
+                                                </HBox>
+                                                <Line endX="274.0" fill="WHITE" opacity="0.25" startX="-70.0" stroke="WHITE">
+                                                    <VBox.margin>
+                                                        <Insets left="30.0" right="30.0" />
+                                                    </VBox.margin>
+                                                </Line>
+                                                <Label text="Número" textFill="#d32f2f">
+                                                    <font>
+                                                        <Font name="Roboto Black" size="15.0" />
+                                                    </font>
+                                                    <VBox.margin>
+                                                        <Insets bottom="10.0" left="30.0" top="20.0" />
+                                                    </VBox.margin></Label>
+                                                <HBox prefHeight="50.0" prefWidth="405.0">
+                                                    <children>
+                                                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                                            <image>
+                                                                <Image url="@images/telefono.png" />
+                                                            </image>
+                                                            <HBox.margin>
+                                                                <Insets bottom="10.0" left="35.0" top="10.0" />
+                                                            </HBox.margin>
+                                                        </ImageView>
+                                                        <Label fx:id="lblTelefono" text="telefono" textFill="WHITE">
+                                                            <HBox.margin>
+                                                                <Insets left="10.0" top="14.0" />
+                                                            </HBox.margin>
+                                                        </Label>
+                                                    </children>
+                                                </HBox>
+                                                <Label text="Correo" textFill="#d32f2f">
+                                                    <font>
+                                                        <Font name="Roboto Black" size="15.0" />
+                                                    </font>
+                                                    <VBox.margin>
+                                                        <Insets bottom="10.0" left="30.0" top="20.0" />
+                                                    </VBox.margin>
+                                                </Label>
+                                                <HBox prefHeight="50.0" prefWidth="405.0">
+                                                    <children>
+                                                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                                            <image>
+                                                                <Image url="@images/correo.png" />
+                                                            </image>
+                                                            <HBox.margin>
+                                                                <Insets bottom="10.0" left="35.0" top="10.0" />
+                                                            </HBox.margin>
+                                                        </ImageView>
+                                                        <Label fx:id="lblCorrero" text="correo" textFill="WHITE">
+                                                            <HBox.margin>
+                                                                <Insets left="10.0" top="14.0" />
+                                                            </HBox.margin>
+                                                        </Label>
+                                                    </children>
+                                                </HBox>
+                                            </children>
+                                        </VBox>
+                                    </children>
+                                </AnchorPane>
+                            </children>
+                        </AnchorPane>
+                    </children>
+                </HBox>
+            </children></VBox>
+    </children>
+</AnchorPane>
